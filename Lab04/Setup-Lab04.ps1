@@ -1,4 +1,4 @@
-﻿Write-Host ''
+Write-Host ''
 Write-Host '----- 演習4 準備スクリプト ----'
 Write-Host ''
 
@@ -31,9 +31,9 @@ Write-Host ''
 
 #変数の宣言
 $RGname = 'RG' + $number
-$VMname = 'Win' + $number + '-2'
-$VMOSimage = 'Win2019Datacenter'
-$VMsize = 'Standard_B2s'
+$VMname = 'Lin' + $number + '-2'
+$VMOSimage = 'UbuntuLTS'
+$VMsize = 'Standard_B1s'
 $VNetname = 'VNet' + $number + '-2'
 $IPname = $vmname + '-ip'
 $NSGname = $vmname + '-nsg'
@@ -56,7 +56,7 @@ New-AzVm `
     -SubnetName $Subnetname `
     -SecurityGroupName $NSGname `
     -PublicIpAddressName $IPName `
-    -OpenPorts 3389 `
+    -OpenPorts 22 `
 | Out-Null
 
 # 実行時間の表示
